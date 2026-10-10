@@ -10,12 +10,22 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("Gryffindor")
+                .font(.largeTitle)
+            Text("Hufflepuff")
+            Text("Ravenclaw")
+            Text("Slytherin")
         }
-        .padding()
+        .font(.title)
+        
+        VStack {
+            Text("Gryffindor")
+                .blur(radius: 0)
+            Text("Hufflepuff")
+            Text("Ravenclaw")
+            Text("Slytherin")
+        }
+        .blur(radius: 5)
     }
 }
 
