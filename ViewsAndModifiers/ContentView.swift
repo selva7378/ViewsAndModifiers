@@ -7,13 +7,27 @@
 
 import SwiftUI
 
+
+struct CapsuleText: View {
+    var text: String
+    
+    var body: some View {
+        Text(text)
+            .font(.largeTitle)
+            .padding()
+//            .foregroundStyle(.white)
+            .background(.blue)
+            .clipShape(.capsule)
+    }
+}
+
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            CapsuleText(text: "selva")
+                .foregroundStyle(.white)
+            CapsuleText(text: "selva")
+                .foregroundStyle(.yellow)
         }
         .padding()
     }
