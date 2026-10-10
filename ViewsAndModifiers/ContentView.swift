@@ -8,30 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var useRedText = false
     var body: some View {
-//        VStack {
-//            Image(systemName: "globe")
-//                .imageScale(.large)
-//                .foregroundStyle(.tint)
-//            Text("Hello, world!")
-//        }
-//        .frame(maxWidth: .infinity, maxHeight: .infinity)
-//        .background(.red)
-        Button("Hello, world!") {
-            print(type(of: self.body))
+        Button("Hello World") {
+            useRedText.toggle()
         }
-        .background(.red)
-        .frame(width: 200, height: 200)
-        Text("Hello, world!")
-            .padding()
-            .background(.red)
-            .padding()
-            .background(.blue)
-            .padding()
-            .background(.green)
-            .padding()
-            .background(.yellow)
+        .foregroundStyle(useRedText ? .red : .blue)
+        //below method is less efficient
+        if useRedText {
+                Button("Hello World") {
+                    useRedText.toggle()
+                }
+                .foregroundStyle(.red)
+            } else {
+                Button("Hello World") {
+                    useRedText.toggle()
+                }
+                .foregroundStyle(.blue)
+            }
     }
+
 }
 
 #Preview {
